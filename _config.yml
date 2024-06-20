@@ -1,5 +1,5 @@
 title: "Knowledge Base"
 description: "A simple knowledge base created with Jekyll."
-baseurl: "" # leave this empty
+baseurl: "/site"
 url: "https://manishkamarapu.github.io" # replace <username> with your GitHub username
 theme: minima
