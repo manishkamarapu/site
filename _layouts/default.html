@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}">
+  <script src="{{ '/js/main.js' | relative_url }}" defer></script>
 </head>
 <body>
   <header>
@@ -12,13 +13,23 @@
     <nav>
       <ul>
         <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/about' | relative_url }}">About</a></li>
-        <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main>
     {{ content }}
+    <div>
+      <h2>Create a New Thread</h2>
+      <form id="thread-form">
+        <input type="text" id="thread-title" placeholder="Title" required>
+        <textarea id="thread-content" placeholder="Content" required></textarea>
+        <button type="submit">Create Thread</button>
+      </form>
+    </div>
+    <div>
+      <h2>Threads</h2>
+      <ul id="threads"></ul>
+    </div>
   </main>
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
