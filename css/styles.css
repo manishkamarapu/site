@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
 header {
@@ -28,6 +29,11 @@ nav ul li a {
 
 main {
   padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
 footer {
@@ -38,4 +44,68 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+form input, form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #555;
+}
+
+.thread-container {
+  margin-top: 20px;
+}
+
+.thread-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.thread-container li {
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.thread-container li h3 {
+  margin: 0 0 10px 0;
+}
+
+.thread-container li button {
+  padding: 5px 10px;
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.thread-container li button:hover {
+  background: #ff4f41;
 }
