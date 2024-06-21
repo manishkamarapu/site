@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Homepage - Knowledge Base</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <section class="search-bar">
+            <input type="text" placeholder="Search for articles...">
+        </section>
+        <section class="categories">
+            <h2>Popular Categories</h2>
+            <!-- List of categories -->
+        </section>
+        <section class="articles">
+            <h2>Recent Articles</h2>
+            <!-- List of recent articles -->
+        </section>
+        <section class="featured-articles">
+            <h2>Featured Articles</h2>
+            <!-- List of featured articles -->
+        </section>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>
