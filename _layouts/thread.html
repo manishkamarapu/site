@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Thread - Knowledge Base</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        <section class="thread">
+            <h2>{{ thread.title }}</h2>
+            <p>{{ thread.content }}</p>
+            <button onclick="document.getElementById('editThreadModal').style.display='block'">Edit Thread</button>
+        </section>
+    </main>
+    <div id="editThreadModal" class="modal">
+        <div class="modal-content">
+            <span onclick="document.getElementById('editThreadModal').style.display='none'" class="close">&times;</span>
+            <h2>Edit Thread</h2>
+            <form id="editThreadForm">
+                <label for="editTitle">Title:</label>
+                <input type="text" id="editTitle" name="title" value="{{ thread.title }}" required>
+                <label for="editContent">Content:</label>
+                <textarea id="editContent" name="content" required>{{ thread.content }}</textarea>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    <script>
+        document.getElementById('editThreadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const title = document.getElementById('editTitle').value;
+            const content = document.getElementById('editContent').value;
+            const threadId = {{ thread.id }};
+
+            fetch('/update_thread/' + threadId, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ title: title, content: content }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert('Error updating thread');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
